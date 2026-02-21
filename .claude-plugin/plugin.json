@@ -1,8 +1,13 @@
 {
-"name": "claude-vault",
-"description": "",
-"version": "0.0.0",
-"author": {
-"name": "Robert Soriano"
-}
+  "name": "claude-vault",
+  "description": "Archive Claude Code sessions to an Obsidian vault. Provides a /done skill that summarizes the session and writes a structured note with metadata, key decisions, and context for resuming later.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Robert Soriano",
+    "url": "https://github.com/wobsoriano"
+  },
+  "homepage": "https://github.com/wobsoriano/claude-vault",
+  "repository": "https://github.com/wobsoriano/claude-vault",
+  "license": "MIT",
+  "keywords": ["obsidian", "vault", "session", "archive", "notes"]
 }
