@@ -7,7 +7,7 @@ A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md
 | Skill | Description |
 |---|---|
 | `/logbook:save` | Checkpoint the current session to Obsidian and keep going. |
-| `/logbook:save-and-exit` | Archive the current session to Obsidian and terminate. |
+| `/logbook:done` | Archive the current session to Obsidian and terminate. |
 | `/logbook:resume <title>` | Load a previously saved note as context to pick up where you left off. |
 
 ## Requirements
@@ -61,7 +61,7 @@ claude --plugin-dir /path/to/logbook
 
 **Archive and exit at the end of a session:**
 ```
-/logbook:save-and-exit
+/logbook:done
 ```
 
 **Resume a previous session:**
