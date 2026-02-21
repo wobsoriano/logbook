@@ -7,10 +7,7 @@
   "plugins": [
     {
       "name": "logbook",
-      "source": {
-        "source": "github",
-        "repo": "wobsoriano/logbook"
-      },
+      "source": "./",
       "description": "Archive Claude Code sessions to an Obsidian vault.",
       "homepage": "https://github.com/wobsoriano/logbook",
       "license": "MIT",
