@@ -2,7 +2,6 @@
 name: done
 description: Archive the current session to Obsidian and end. Use when wrapping up a session.
 disable-model-invocation: true
-argument-hint: "[cost]"
 allowed-tools: Bash(git branch --show-current), Bash(basename *), Bash(kill *), mcp__obsidian__write_note
 ---
 
@@ -36,8 +35,6 @@ If the session involved architecture, a workflow, data flow, component relations
 
 Use `mcp__obsidian__write_note` to create the note at path `<title>.md` (root of vault, no subfolder).
 
-The cost is: `$ARGUMENTS` — if this is non-empty, use it as the `cost` field value. If empty, set it to `null`.
-
 Note format:
 
 ```markdown
@@ -46,7 +43,6 @@ session_id: ${CLAUDE_SESSION_ID}
 branch: <branch or "no-branch">
 project: <basename of working directory>
 date: <today's date, YYYY-MM-DD>
-cost: <$ARGUMENTS if provided, otherwise null>
 ---
 
 # <Title>

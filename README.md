@@ -8,7 +8,7 @@ Run `/claude-vault:done` at the end of any session to save a structured note wit
 
 | Skill | Description |
 |---|---|
-| `/claude-vault:done [cost]` | Archive the current session and exit. Pass the session cost optionally (e.g. `/claude-vault:done $0.042`). |
+| `/claude-vault:done` | Archive the current session and exit. |
 
 ## Requirements
 
@@ -57,12 +57,6 @@ At the end of a session, run:
 /claude-vault:done
 ```
 
-Or with the session cost:
-
-```
-/claude-vault:done $0.042
-```
-
 Claude will:
 1. Gather git branch and project name
 2. Analyze the full conversation
@@ -79,7 +73,6 @@ session_id: <session id>
 branch: <git branch>
 project: <directory name>
 date: YYYY-MM-DD
-cost: $0.042  # omitted if not provided
 ---
 
 # <title>
