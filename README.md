@@ -44,9 +44,14 @@ export LOGBOOK_VAULT_PATH="/path/to/your/vault"
 Add this repo as a marketplace, then install:
 
 ```bash
-claude plugin marketplace add https://github.com/wobsoriano/logbook.git
+claude plugin marketplace add wobsoriano/logbook
 claude plugin install logbook@logbook
 ```
+
+> **SSH error?** If you see a `Permission denied (publickey)` error, your machine's git is trying to use SSH for GitHub. Fix it by running:
+> ```bash
+> git config --global url."https://github.com/".insteadOf git@github.com:
+> ```
 
 Or load it locally during development:
 
