@@ -11,7 +11,6 @@ A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md
 | `/logbook:save` | Checkpoint the current session to Obsidian and keep going. |
 | `/logbook:done` | Archive the current session to Obsidian and terminate. |
 | `/logbook:resume <title>` | Load a previously saved note as context to pick up where you left off. |
-| `/logbook:list` | List recently saved sessions in the vault. |
 
 ## Requirements
 
@@ -79,23 +78,6 @@ Run at the start of a new session to load a saved note as context. Claude will s
 
 ```
 /logbook:resume auth-refactor
-```
-
-### List recent sessions
-
-Browse recently saved notes without opening Obsidian.
-
-```
-/logbook:list
-```
-
-Output example:
-
-```
- Title                  Project          Branch      Date
- ─────────────────────────────────────────────────────────
- auth-refactor          my-app           main        2026-02-21
- todo-api-setup         my-app           feat/api    2026-02-20
 ```
 
 ## Session chaining
