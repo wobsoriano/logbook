@@ -1,0 +1,20 @@
+{
+  "name": "claude-vault",
+  "owner": {
+    "name": "Robert Soriano",
+    "url": "https://github.com/wobsoriano"
+  },
+  "plugins": [
+    {
+      "name": "claude-vault",
+      "source": {
+        "source": "github",
+        "repo": "wobsoriano/claude-vault"
+      },
+      "description": "Archive Claude Code sessions to an Obsidian vault.",
+      "homepage": "https://github.com/wobsoriano/claude-vault",
+      "license": "MIT",
+      "keywords": ["obsidian", "vault", "session", "archive", "notes"]
+    }
+  ]
+}

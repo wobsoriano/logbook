@@ -39,8 +39,11 @@ export OBSIDIAN_VAULT_PATH="/path/to/your/vault"
 
 ### 3. Install the plugin
 
+Add this repo as a marketplace, then install:
+
 ```bash
-claude plugin install claude-vault
+claude plugin marketplace add wobsoriano/claude-vault
+claude plugin install claude-vault@claude-vault
 ```
 
 Or load it locally during development:
