@@ -18,9 +18,10 @@ basename "$PWD"
 
 ## Step 2 — Analyze the conversation
 
-Review the full conversation and extract:
+Review the full conversation history and extract:
 
-- **Title**: 2–4 words, lowercase with hyphens (e.g. `auth-refactor`, `todo-api-setup`). Shortest title that still makes the note easy to find later.
+- **Title**: Check if `/logbook:save` was already invoked during this conversation — if so, reuse the exact same title it used (to overwrite the checkpoint rather than create a duplicate). Otherwise, derive a 2–4 word title, lowercase with hyphens (e.g. `auth-refactor`, `todo-api-setup`).
+- **Continued-from**: Check if `/logbook:resume` was invoked during this conversation — if so, note the title of the note that was resumed.
 - **Summary**: 2–3 sentences on what was accomplished.
 - **Key decisions**: Choices made during the session with brief rationale.
 - **What was done**: Specific implementations, changes, commands, or findings.
@@ -33,7 +34,7 @@ If the session involved architecture, a workflow, data flow, component relations
 
 ## Step 4 — Write the note
 
-Use `mcp__obsidian__write_note` to create the note at path `<title>.md` (root of vault, no subfolder).
+Use `mcp__obsidian__write_note` to write the note at path `<title>.md` (root of vault, no subfolder). This overwrites any existing note at that path (e.g. from a previous `/logbook:save` checkpoint).
 
 Note format:
 
@@ -43,9 +44,13 @@ session_id: ${CLAUDE_SESSION_ID}
 branch: <branch or "no-branch">
 project: <basename of working directory>
 date: <today's date, YYYY-MM-DD>
+continued-from: <title of resumed note>  # omit this line if no /logbook:resume was used
 ---
 
 # <Title>
+
+> Continued from [[<continued-from-title>]]
+> *(omit this line if no /logbook:resume was used)*
 
 ## Summary
 <2–3 sentences>
@@ -66,9 +71,19 @@ date: <today's date, YYYY-MM-DD>
 <mermaid block, or omit this section entirely if no diagram>
 ```
 
-## Step 5 — Confirm, then terminate
+## Step 5 — Append to daily note
 
-After the note is saved, output exactly:
+Use `mcp__obsidian__write_note` with `mode: "append"` to append a one-line entry to today's daily note at path `YYYY-MM-DD.md`:
+
+```
+- [[<title>]] · <project> · <branch>
+```
+
+Where `YYYY-MM-DD` is today's date. This keeps a running log of sessions in your daily note.
+
+## Step 6 — Confirm, then terminate
+
+After both writes succeed, output exactly:
 
 ```
 Archived → <title>.md
