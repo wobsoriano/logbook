@@ -119,16 +119,6 @@ continued-from: <previous note>  # only if /logbook:resume was used
 ## Diagram  # only if relevant
 ```
 
-## Daily notes
-
-Every `/logbook:done` appends a one-liner to today's daily note (`YYYY-MM-DD.md`):
-
-```
-- [[auth-refactor]] · my-app · main
-```
-
-This integrates with Obsidian's daily notes workflow, giving you a running log of Claude Code sessions alongside your other daily notes.
-
 ## License
 
 MIT

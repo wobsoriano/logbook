@@ -71,19 +71,9 @@ continued-from: <title of resumed note>  # omit this line if no /logbook:resume 
 <mermaid block, or omit this section entirely if no diagram>
 ```
 
-## Step 5 — Append to daily note
+## Step 5 — Confirm, then terminate
 
-Use `mcp__obsidian__write_note` with `mode: "append"` to append a one-line entry to today's daily note at path `YYYY-MM-DD.md`:
-
-```
-- [[<title>]] · <project> · <branch>
-```
-
-Where `YYYY-MM-DD` is today's date. This keeps a running log of sessions in your daily note.
-
-## Step 6 — Confirm, then terminate
-
-After both writes succeed, output exactly:
+After the note is saved, output exactly:
 
 ```
 Archived → <title>.md
