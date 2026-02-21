@@ -1,6 +1,8 @@
 # logbook
 
-A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md) vault. Save, resume, and search past sessions without leaving Claude Code.
+A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md) vault.
+
+**Local-first. No cloud sync required.** Notes are written directly to your local Obsidian vault — no account, no subscription, no data leaving your machine.
 
 ## Skills
 
@@ -10,8 +12,6 @@ A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md
 | `/logbook:done` | Archive the current session to Obsidian and terminate. |
 | `/logbook:resume <title>` | Load a previously saved note as context to pick up where you left off. |
 | `/logbook:list` | List recently saved sessions in the vault. |
-| `/logbook:search <query>` | Search saved notes by keyword or topic. |
-| `/logbook:open <title>` | Open a note directly in the Obsidian desktop app. |
 
 ## Requirements
 
@@ -38,7 +38,7 @@ The bundled `.mcp.json` uses `${LOGBOOK_VAULT_PATH}` so the plugin can also star
 export LOGBOOK_VAULT_PATH="/path/to/your/vault"
 ```
 
-> **Note:** If you already configured mcp-obsidian via `claude mcp add-json` in step 1, the `LOGBOOK_VAULT_PATH` env var is optional — your user-scoped MCP config takes precedence. However, it is still required for `/logbook:open` to work.
+> **Note:** If you already configured mcp-obsidian via `claude mcp add-json` in step 1, the `LOGBOOK_VAULT_PATH` env var is optional — your user-scoped MCP config takes precedence.
 
 ### 3. Install the plugin
 
@@ -59,7 +59,7 @@ claude --plugin-dir /path/to/logbook
 
 ### Save a checkpoint mid-session
 
-Run at any point to snapshot progress without ending the session. If called multiple times in the same session, subsequent saves overwrite the previous checkpoint rather than creating duplicates.
+Run at any point to snapshot progress without ending the session. Calling it multiple times in the same session overwrites the previous checkpoint rather than creating duplicates.
 
 ```
 /logbook:save
@@ -75,7 +75,7 @@ Run at the end of a session to save a final note and terminate Claude Code. Also
 
 ### Resume a previous session
 
-Run at the start of a new session to load a saved note as context. Claude will summarise the previous session and suggest the next step.
+Run at the start of a new session to load a saved note as context. Claude will summarise what was done and suggest the next step.
 
 ```
 /logbook:resume auth-refactor
@@ -98,27 +98,9 @@ Output example:
  todo-api-setup         my-app           feat/api    2026-02-20
 ```
 
-### Search notes
-
-Search across all saved notes by keyword or topic — useful when you remember something from a past session but not the exact title.
-
-```
-/logbook:search obsidian mcp setup
-```
-
-### Open in Obsidian
-
-Open a note directly in the Obsidian desktop app.
-
-```
-/logbook:open auth-refactor
-```
-
-> Requires `LOGBOOK_VAULT_PATH` to be set so the vault name can be resolved.
-
 ## Session chaining
 
-When you `/logbook:resume` a note and later run `/logbook:save` or `/logbook:done`, the new note automatically links back to the one you resumed from. This creates a chain you can follow across multi-session projects.
+When you `/logbook:resume` a note and later run `/logbook:save` or `/logbook:done`, the new note automatically links back to the one you resumed from — creating a chain you can follow across multi-session projects.
 
 Frontmatter:
 ```yaml
