@@ -2,17 +2,17 @@
 
 A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md) vault.
 
-Run `/claude-vault:done` at the end of any session to save a structured note with a summary, key decisions, open follow-ups, and context for resuming — then automatically terminate the session.
-
 ## Skills
 
 | Skill | Description |
 |---|---|
-| `/claude-vault:done` | Archive the current session and exit. |
+| `/claude-vault:save` | Checkpoint the current session to Obsidian and keep going. |
+| `/claude-vault:save-and-exit` | Archive the current session to Obsidian and terminate. |
+| `/claude-vault:resume <title>` | Load a previously saved note as context to pick up where you left off. |
 
 ## Requirements
 
-This plugin requires the **mcp-obsidian** MCP server to write notes to your vault.
+This plugin requires the **mcp-obsidian** MCP server to read and write notes in your vault.
 
 ## Setup
 
@@ -54,21 +54,26 @@ claude --plugin-dir /path/to/claude-vault
 
 ## Usage
 
-At the end of a session, run:
-
+**Checkpoint mid-session:**
 ```
-/claude-vault:done
+/claude-vault:save
 ```
 
-Claude will:
-1. Gather git branch and project name
-2. Analyze the full conversation
-3. Write a structured `.md` note to the root of your Obsidian vault
-4. Print a confirmation line and terminate the session
+**Archive and exit at the end of a session:**
+```
+/claude-vault:save-and-exit
+```
+
+**Resume a previous session:**
+```
+/claude-vault:resume auth-refactor
+```
+
+Claude will search the vault for a note matching the title and load its context — including what was done, open follow-ups, and the suggested next step.
 
 ## Note format
 
-Each archived note includes YAML frontmatter and these sections:
+Each saved note includes YAML frontmatter and these sections:
 
 ```markdown
 ---

@@ -1,5 +1,5 @@
 ---
-name: done
+name: save-and-exit
 description: Archive the current session to Obsidian and end. Use when wrapping up a session.
 disable-model-invocation: true
 allowed-tools: Bash(git branch --show-current), Bash(basename *), Bash(kill *), mcp__obsidian__write_note
