@@ -1,20 +1,20 @@
 {
-  "name": "claude-vault",
+  "name": "logbook",
   "owner": {
     "name": "Robert Soriano",
     "url": "https://github.com/wobsoriano"
   },
   "plugins": [
     {
-      "name": "claude-vault",
+      "name": "logbook",
       "source": {
         "source": "github",
-        "repo": "wobsoriano/claude-vault"
+        "repo": "wobsoriano/logbook"
       },
       "description": "Archive Claude Code sessions to an Obsidian vault.",
-      "homepage": "https://github.com/wobsoriano/claude-vault",
+      "homepage": "https://github.com/wobsoriano/logbook",
       "license": "MIT",
-      "keywords": ["obsidian", "vault", "session", "archive", "notes"]
+      "keywords": ["obsidian", "vault", "session", "archive", "notes", "logbook"]
     }
   ]
 }

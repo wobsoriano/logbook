@@ -1,13 +1,13 @@
 {
-  "name": "claude-vault",
-  "description": "Archive Claude Code sessions to an Obsidian vault. Provides a /done skill that summarizes the session and writes a structured note with metadata, key decisions, and context for resuming later.",
+  "name": "logbook",
+  "description": "Archive Claude Code sessions to an Obsidian vault. Save, checkpoint, and resume sessions with structured notes.",
   "version": "1.0.0",
   "author": {
     "name": "Robert Soriano",
     "url": "https://github.com/wobsoriano"
   },
-  "homepage": "https://github.com/wobsoriano/claude-vault",
-  "repository": "https://github.com/wobsoriano/claude-vault",
+  "homepage": "https://github.com/wobsoriano/logbook",
+  "repository": "https://github.com/wobsoriano/logbook",
   "license": "MIT",
-  "keywords": ["obsidian", "vault", "session", "archive", "notes"]
+  "keywords": ["obsidian", "vault", "session", "archive", "notes", "logbook"]
 }

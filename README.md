@@ -1,4 +1,4 @@
-# claude-vault
+# logbook
 
 A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md) vault.
 
@@ -6,9 +6,9 @@ A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md
 
 | Skill | Description |
 |---|---|
-| `/claude-vault:save` | Checkpoint the current session to Obsidian and keep going. |
-| `/claude-vault:save-and-exit` | Archive the current session to Obsidian and terminate. |
-| `/claude-vault:resume <title>` | Load a previously saved note as context to pick up where you left off. |
+| `/logbook:save` | Checkpoint the current session to Obsidian and keep going. |
+| `/logbook:save-and-exit` | Archive the current session to Obsidian and terminate. |
+| `/logbook:resume <title>` | Load a previously saved note as context to pick up where you left off. |
 
 ## Requirements
 
@@ -26,7 +26,7 @@ claude mcp add-json obsidian --scope user '{"type":"stdio","command":"npx","args
 
 > For full instructions and other platforms, see [mcp-obsidian.org/install](https://mcp-obsidian.org/install/).
 
-### 2. Set `OBSIDIAN_VAULT_PATH`
+### 2. Set `CLAUDE_VAULT_PATH`
 
 The bundled `.mcp.json` uses `${CLAUDE_VAULT_PATH}` so the plugin can also start the MCP server automatically. Export the variable in your shell profile:
 
@@ -42,31 +42,31 @@ export CLAUDE_VAULT_PATH="/path/to/your/vault"
 Add this repo as a marketplace, then install:
 
 ```bash
-claude plugin marketplace add wobsoriano/claude-vault
-claude plugin install claude-vault@claude-vault
+claude plugin marketplace add wobsoriano/logbook
+claude plugin install logbook@logbook
 ```
 
 Or load it locally during development:
 
 ```bash
-claude --plugin-dir /path/to/claude-vault
+claude --plugin-dir /path/to/logbook
 ```
 
 ## Usage
 
 **Checkpoint mid-session:**
 ```
-/claude-vault:save
+/logbook:save
 ```
 
 **Archive and exit at the end of a session:**
 ```
-/claude-vault:save-and-exit
+/logbook:save-and-exit
 ```
 
 **Resume a previous session:**
 ```
-/claude-vault:resume auth-refactor
+/logbook:resume auth-refactor
 ```
 
 Claude will search the vault for a note matching the title and load its context — including what was done, open follow-ups, and the suggested next step.
