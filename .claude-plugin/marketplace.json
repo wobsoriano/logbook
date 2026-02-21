@@ -8,8 +8,8 @@
     {
       "name": "logbook",
       "source": {
-        "source": "github",
-        "repo": "wobsoriano/logbook"
+        "source": "url",
+        "url": "https://github.com/wobsoriano/logbook.git"
       },
       "description": "Archive Claude Code sessions to an Obsidian vault.",
       "homepage": "https://github.com/wobsoriano/logbook",

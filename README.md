@@ -44,7 +44,7 @@ export LOGBOOK_VAULT_PATH="/path/to/your/vault"
 Add this repo as a marketplace, then install:
 
 ```bash
-claude plugin marketplace add wobsoriano/logbook
+claude plugin marketplace add https://github.com/wobsoriano/logbook.git
 claude plugin install logbook@logbook
 ```
 
