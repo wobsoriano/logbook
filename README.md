@@ -66,7 +66,7 @@ Run at any point to snapshot progress without ending the session. Calling it mul
 
 ### Archive and exit
 
-Run at the end of a session to save a final note and terminate Claude Code. Also appends a one-line entry to today's daily note (`YYYY-MM-DD.md`) in your vault.
+Run at the end of a session to save a final note and terminate Claude Code.
 
 ```
 /logbook:done
