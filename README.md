@@ -28,14 +28,14 @@ claude mcp add-json obsidian --scope user '{"type":"stdio","command":"npx","args
 
 ### 2. Set `OBSIDIAN_VAULT_PATH`
 
-The bundled `.mcp.json` uses `${OBSIDIAN_VAULT_PATH}` so the plugin can also start the MCP server automatically. Export the variable in your shell profile:
+The bundled `.mcp.json` uses `${CLAUDE_VAULT_PATH}` so the plugin can also start the MCP server automatically. Export the variable in your shell profile:
 
 ```bash
 # ~/.zshrc or ~/.bashrc
-export OBSIDIAN_VAULT_PATH="/path/to/your/vault"
+export CLAUDE_VAULT_PATH="/path/to/your/vault"
 ```
 
-> **Note:** If you already configured mcp-obsidian via `claude mcp add-json` in step 1, the `OBSIDIAN_VAULT_PATH` env var is optional — your user-scoped MCP config takes precedence.
+> **Note:** If you already configured mcp-obsidian via `claude mcp add-json` in step 1, the `CLAUDE_VAULT_PATH` env var is optional — your user-scoped MCP config takes precedence.
 
 ### 3. Install the plugin
 

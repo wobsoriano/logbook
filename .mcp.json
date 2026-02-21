@@ -2,7 +2,7 @@
   "mcpServers": {
     "obsidian": {
       "command": "npx",
-      "args": ["@mauricio.wolff/mcp-obsidian@latest", "${OBSIDIAN_VAULT_PATH}"]
+      "args": ["@mauricio.wolff/mcp-obsidian@latest", "${CLAUDE_VAULT_PATH}"]
     }
   }
 }
