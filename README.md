@@ -18,15 +18,18 @@ This plugin requires the **mcp-obsidian** MCP server to read and write notes in 
 
 ## Setup
 
-### 1. Install mcp-obsidian
+> **Complete these steps in order.** The plugin bundles the Obsidian MCP server and reads `LOGBOOK_VAULT_PATH` on startup — if the variable isn't set, the plugin will fail to load.
 
-Run this command, replacing the path with your actual Obsidian vault location:
+### 1. Set `LOGBOOK_VAULT_PATH`
+
+Export your Obsidian vault path in your shell profile:
 
 ```bash
-claude mcp add-json obsidian --scope user '{"type":"stdio","command":"npx","args":["@mauricio.wolff/mcp-obsidian@latest","/path/to/your/vault"]}'
+# ~/.zshrc or ~/.bashrc
+export LOGBOOK_VAULT_PATH="/path/to/your/vault"
 ```
 
-> For full instructions and other platforms, see [mcp-obsidian.org/install](https://mcp-obsidian.org/install/).
+Then reload your shell (`source ~/.zshrc`) before continuing.
 
 ### 2. Install the plugin
 
@@ -42,6 +45,8 @@ Or load it locally during development:
 ```bash
 claude --plugin-dir /path/to/logbook
 ```
+
+> For other ways to configure the Obsidian MCP, see [mcp-obsidian.org/install](https://mcp-obsidian.org/install/).
 
 ## Usage
 
