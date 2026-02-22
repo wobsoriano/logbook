@@ -10,7 +10,7 @@ A Claude Code plugin that archives sessions to an [Obsidian](https://obsidian.md
 |---|---|
 | `/logbook:save` | Checkpoint the current session to Obsidian and keep going. |
 | `/logbook:done` | Archive the current session to Obsidian and terminate. |
-| `/logbook:resume <title>` | Load a previously saved note as context to pick up where you left off. |
+| `/logbook:load <title>` | Load a previously saved note as context to pick up where you left off. |
 
 ## Requirements
 
@@ -71,12 +71,12 @@ Run at the end of a session to save a final note and terminate Claude Code.
 Run at the start of a new session to load a saved note as context. Claude will summarise what was done and suggest the next step.
 
 ```
-/logbook:resume auth-refactor
+/logbook:load auth-refactor
 ```
 
 ## Session chaining
 
-When you `/logbook:resume` a note and later run `/logbook:save` or `/logbook:done`, the new note automatically links back to the one you resumed from — creating a chain you can follow across multi-session projects.
+When you `/logbook:load` a note and later run `/logbook:save` or `/logbook:done`, the new note automatically links back to the one you resumed from — creating a chain you can follow across multi-session projects.
 
 Frontmatter:
 ```yaml
@@ -98,12 +98,12 @@ session_id: <session id>
 branch: <git branch>
 project: <directory name>
 date: YYYY-MM-DD
-continued-from: <previous note>  # only if /logbook:resume was used
+continued-from: <previous note>  # only if /logbook:load was used
 ---
 
 # <title>
 
-> Continued from [[previous-note]]  # only if /logbook:resume was used
+> Continued from [[previous-note]]  # only if /logbook:load was used
 
 ## Summary
 ## Key Decisions

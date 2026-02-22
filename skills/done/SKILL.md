@@ -21,7 +21,7 @@ basename "$PWD"
 Review the full conversation history and extract:
 
 - **Title**: Check if `/logbook:save` was already invoked during this conversation — if so, reuse the exact same title it used (to overwrite the checkpoint rather than create a duplicate). Otherwise, derive a 2–4 word title, lowercase with hyphens (e.g. `auth-refactor`, `todo-api-setup`).
-- **Continued-from**: Check if `/logbook:resume` was invoked during this conversation — if so, note the title of the note that was resumed.
+- **Continued-from**: Check if `/logbook:load` was invoked during this conversation — if so, note the title of the note that was resumed.
 - **Summary**: 2–3 sentences on what was accomplished.
 - **Key decisions**: Choices made during the session with brief rationale.
 - **What was done**: Specific implementations, changes, commands, or findings.
@@ -44,13 +44,13 @@ session_id: ${CLAUDE_SESSION_ID}
 branch: <branch or "no-branch">
 project: <basename of working directory>
 date: <today's date, YYYY-MM-DD>
-continued-from: <title of resumed note>  # omit this line if no /logbook:resume was used
+continued-from: <title of resumed note>  # omit this line if no /logbook:load was used
 ---
 
 # <Title>
 
 > Continued from [[<continued-from-title>]]
-> *(omit this line if no /logbook:resume was used)*
+> *(omit this line if no /logbook:load was used)*
 
 ## Summary
 <2–3 sentences>

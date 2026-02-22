@@ -1,5 +1,5 @@
 ---
-name: resume
+name: load
 description: Load a previously saved session note from Obsidian as context. Use at the start of a session to pick up where you left off.
 disable-model-invocation: true
 argument-hint: "<title>"
@@ -32,7 +32,7 @@ Output a brief confirmation so the user knows what was loaded, then summarise wh
 Format:
 
 ```
-Resumed ← <title>.md
+Loaded ← <title>.md
 Project: <project> · Branch: <branch> · <date>
 
 <2–4 bullet summary of previous session>
